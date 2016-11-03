@@ -1,28 +1,290 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Abdul Razak Shaikh</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="eng" lang="eng">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>MyBuildco</title>
+    <meta name="keywords" content="" />    
+    <!--<link rel="stylesheet" type="text/css" href="styles/main.css" />-->
+    <style type="text/css">
+	/*body{
+		width:320px;
+		height:480px;
+		overflow:hidden;
+	}*/
+	
+.text{
+	position:absolute;
+	z-index:500;
+	text-decoration:none;
+	font: 35px/70px nexa, Arial, Helvetica, sans-serif ;
+	color: #333 !important;
+	padding: 7px 12px;
+	line-height:normal;
+	font-weight:bold;
+	text-align:center ; 
+	margin-top:200px;
+	width:100%;
+}
 
-    <!-- Bootstrap -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+#stage {
+    top: 0px;
+    left: 0px;
+	z-index: 100;
+			
+}
+#logo{
+	background: transparent url(images/mybuildco-h.png) center 30px no-repeat;
+}
+.stage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 900px;
+	background: #9fbf16;
+    /*height: 359px;*/
+	height:100%;
+    overflow: hidden;
+}
+#bg {
+	/*background: #aedfe5 url(images/sky1.png) -10px 0 no-repeat;*/
+	background:url(images/bg.jpg) no-repeat top center;
+}
+#clouds {
+	background: transparent url(images/cloud.png) 25px 12px repeat-x;
+}
+#clouds-1 {
+	background: transparent url(images/cloud.png) 0 180px repeat-x;
+}
+#plane {
+	background: transparent url(images/plane.png) 0 100px repeat-x;
+}
+#building {
+    background: transparent url(images/building.png) 0 190px repeat-x;
+}
+#building1 {
+	background: transparent url(images/building1.png) 0 170px repeat-x;
+}
+#garden {
+	background: transparent url(images/garden.png) 0 225px repeat-x;	
+}
+#balloons {
+            position: relative;
+            left: 720px;
+            background: transparent url(images/balloons.png) 0 0 repeat-y;
+}
+#bird {
+    /*background: transparent url(images/bird-forward-back.png) 0 0 no-repeat;*/
+	background:transparent url(images/birds.png) 0 0 no-repeat;
+    position: absolute;
+    top: 80px;
+    left: 65px;
+	width:45px;
+	height:65px;
+    /*width: 180px;
+    height: 123px;*/
+    z-index: 2000;
+	cursor: pointer;
+}
+#bird1 {
+    /*background: transparent url(images/bird-forward-back.png) 0 0 no-repeat;*/
+    background:transparent url(images/birds.png) 0 0 no-repeat;
+    position: absolute;
+    top: 90px;
+    left: 145px;
+    width:45px;
+    height:65px;
+    /*width: 180px;
+    height: 123px;*/
+    z-index: 2000;
+    cursor: pointer;
+}
+#bird2 {
+    /*background: transparent url(images/bird-forward-back.png) 0 0 no-repeat;*/
+    background:transparent url(images/birds.png) 0 0 no-repeat;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    width:45px;
+    height:65px;
+    /*width: 180px;
+    height: 123px;*/
+    z-index: 2000;
+    cursor: pointer;
+}
+#bird3 {
+    /*background: transparent url(images/bird-forward-back.png) 0 0 no-repeat;*/
+    background:transparent url(images/birds.png) 0 0 no-repeat;
+    position: absolute;
+    top: 80px;
+    right: 15px;
+    width:45px;
+    height:65px;
+    /*width: 180px;
+    height: 123px;*/
+    z-index: 2000;
+    cursor: pointer;
+}
+#bird4 {
+    /*background: transparent url(images/bird-forward-back.png) 0 0 no-repeat;*/
+    background:transparent url(images/birds.png) 0 0 no-repeat;
+    position: absolute;
+    top: 90px;
+    right: 145px;
+    width:45px;
+    height:65px;
+    /*width: 180px;
+    height: 123px;*/
+    z-index: 2000;
+    cursor: pointer;
+}
+    </style>
+    
+    <!-- IE6 fixes are found in styles/ie6.css -->
+    <!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="styles/ie6.css" /><![endif]-->
+    
+    <script src="scripts/jquery-1.6.3.min.js" type="text/javascript"></script>
+    <script src="scripts/jquery.spritely-0.6.js" type="text/javascript"></script>
 
-    <!-- HTML5 shim This is Abdul Razak Shaikh Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <h1>Hello, This is Abdul Razak Shaikh!</h1>
+    <script type="text/javascript">
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+        (function($) {
+            $(document).ready(function() {
+            
+            $('#bird').sprite({fps: 1, no_of_frames: 4});
+			
+                $('#bird, #bird1, #bird2, #bird3, #bird4')
+                    .sprite({
+                        fps: 9, 
+                        no_of_frames: 3,
+                        // the following are optional: new in version 0.6...
+                        start_at_frame: 2,
+                        on_first_frame: function(obj) {
+                            if (window.console) {
+                                console.log('first frame');
+                            }
+                        },
+                        on_last_frame: function(obj) {
+                            // you could stop the sprite here with, e.g.
+                            // obj.spStop();
+                            if (window.console) {
+                                console.log('last frame');
+                            }
+                        },
+                        on_frame: {
+                            2: function(obj) {
+                                // you could change the 'state' of the
+                                // sprite here with, e.g. obj.spState(2);
+                                if (window.console) {
+                                    console.log('frame 2');
+                                }
+                            }
+                        }
+                    })
+                   /* .spRandom({top: 150, bottom: 200, left: 100, right: 0})*/
+                    .isDraggable()
+                    .activeOnClick()
+                    .active();
+                $('#clouds').pan({fps: 30, speed: 0.7, dir: 'left', depth: 10});
+                $('#clouds-1').pan({fps: 30, speed: 3, dir: 'left', depth: 30});
+                $('#building').pan({fps: 30, speed: 3, dir: 'right', depth: 7});
+                $('#building1').pan({fps: 30, speed: 3, dir: 'left', depth: 8});
+				$('#plane').pan({fps: 30, speed: 3, dir: 'right', depth: 50});
+                $('#building,#building1, #clouds-1, #clouds, #plane').spRelSpeed(8);
+                
+                window.actions = {
+                    fly_slowly_forwards: function() {
+                        $('#bird')
+                            .fps(10)
+                            .spState(1);
+                        $('#plane, #building, #building1, #clouds-1, #clouds')
+                            .spRelSpeed(10)
+                            .spChangeDir('left');
+                    },
+                    fly_slowly_backwards: function() {
+                        $('#bird')
+                            .fps(10)
+                            .spState(2);
+                         $('#plane, #building, #building1, #clouds-1, #clouds')
+                            .spRelSpeed(10)
+                            .spChangeDir('right');
+                    },
+                    fly_quickly_forwards: function() {
+                        $('#bird')
+                            .fps(20)
+                            .spState(1);
+                        $('#plane, #building, #building1, #clouds-1, #clouds')
+                            .spRelSpeed(30)
+                            .spChangeDir('left');
+                    },
+                    fly_quickly_backwards: function() {
+                        $('#bird')
+                            .fps(20)
+                            .spState(2);
+                        $('#plane, #building, #building1, #clouds-1, #clouds')
+                            .spRelSpeed(30)
+                            .spChangeDir('right');
+                    },
+                    fly_like_lightning_forwards: function() {
+                        $('#bird')
+                            .fps(25)
+                            .spState(1);
+                       $('#plane, #building, #building1, #clouds-1, #clouds')
+                            .spSpeed(40)
+                            .spChangeDir('left');
+                    },
+                    fly_like_lightning_backwards: function() {
+                        $('#bird')
+                            .fps(25)
+                            .spState(2);
+                       $('#plane, #building, #building1, #clouds-1, #clouds')
+                            .spSpeed(40)
+                            .spChangeDir('right');
+                    }
+                };
+                
+                window.page = {
+                    hide_panels: function() {
+                        $('.panel').hide(300);
+                    },
+                    show_panel: function(el_id) {
+                        this.hide_panels();
+                        $(el_id).show(300);
+                    }
+                }
+                
+            });
+        })(jQuery);
+    
+    </script>
+</head>
+<body>
+<div id="container">
+    <div id="stage" class="stage">
+    
+        <div id="tap" class="stage"></div>
+        <div id="bg" class="stage"></div>
+        <div id="clouds" class="stage"></div>
+        <div id="clouds-1" class="stage"></div>
+        <div id="building" class="stage"></div>
+        <div id="building1" class="stage"></div>
+        <div id="garden" class="stage"></div>
+        <div id="plane" class="stage"></div>
+       
+    </div>
+    
+    <div id="bird"></div>
+    <div id="bird1"></div>
+    <div id="bird2"></div>
+    <div id="bird3"></div>
+    <div id="bird4"></div>
+    
+
+    
+<!--     <h3 class="text">We are Coming with a New idea <br />
+		Website is Under construction </h3> -->
+    
+</div>
+
+</body>
 </html>
