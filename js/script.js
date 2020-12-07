@@ -17,41 +17,6 @@ $(".nav-tabs .nav-link").click(function(){
 });
 
 
-
-
-$('#home-tab').click(function(e) {
-    e.preventDefault();
-    if ($(window).width() < 767)
-    { $('.carousel-nav').hide(); }
-});
-
-
-
-
-
-
-$("#about-tab, #work-tab, #contact-tab").click(function(){
-    $('.left-area').addClass('scroll');
-});
-$("#home-tab").click(function(){
-    $('.left-area').removeClass('scroll');
-});
-
-// ScrollBar
-// $(".nav-tabs .nav-link").click(function(){
-//     $(".left-area.scroll").niceScroll({
-//         cursorcolor:"#4c43ff",
-//         cursorwidth:"5px",
-//         cursorborder:"0px solid #000",
-//         scrollspeed:60,
-//         autohidemode:true,
-//         // background:'#383737',
-//         horizrailenabled:false,
-//         touchbehavior:true,
-//         smoothscroll:true
-//     });
-// });
-
 // Skills TagCloud Canvas
 $(document).ready(function() {
     if (!$('#myCanvas').tagcanvas({
@@ -76,3 +41,39 @@ $(document).ready(function() {
         $('#myCanvasContainer').hide();
     }
 });
+
+
+$('#home-tab').click(function(e) {
+    e.preventDefault();
+    if ($(window).width() < 767)
+    { $('.carousel-nav').hide(); }
+});
+
+// ScrollBar
+// $(".nav-tabs .nav-link").click(function(){
+//     $(".left-area").niceScroll({
+//         cursorcolor:"#4c43ff",
+//         cursorwidth:"5px",
+//         cursorborder:"0px solid #000",
+//         scrollspeed:60,
+//         autohidemode:true,
+//         // background:'#383737',
+//         horizrailenabled:false,
+//         touchbehavior:true,
+//         smoothscroll:true
+//     });
+// });
+
+
+$("#about-tab, #work-tab, #contact-tab").click(function(){
+    $('.left-area').addClass('scroll');
+    $("body").css("overflow-y", "auto");
+});
+$("#home-tab").click(function(){
+    $('.left-area').removeClass('scroll');
+    $("body").css("overflow-y", "hidden");
+});
+
+
+
+
