@@ -21,7 +21,8 @@
 
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-              <div id="fullpage">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore assumenda, error, cupiditate doloremque labore molestiae quod. Reiciendis optio et laborum maiores, fuga, quod, quaerat dolor non dolores sapiente, vero accusamus. ipsum dolor sit amet consectetur adipisicing elit. Sed molestiae animi enim assumenda, repudiandae non perspiciatis, eaque vel eligendi fuga quasi dicta eum corporis nulla minus in amet hic impedit. ipsum dolor sit amet consectetur adipisicing, elit. Vero laborum officiis rerum maxime sit, cum in ab debitis quis sapiente mollitia fuga enim earum accusantium vel obcaecati omnis odio accusamus!</p>
+              <!-- <div id="fullpage">
                   <div class="section active" id="section0">
                       <div class="row carousel-content-wrap right-mock mobile-view">
                         <div class="caption-wrap">
@@ -66,7 +67,7 @@
                         </div>
                       </div>
                   </div>
-              </div>
+              </div> -->
           </div>
           <div class="tab-pane fade pb-5" id="about" role="tabpanel" aria-labelledby="about-tab">
 
@@ -103,13 +104,12 @@
                       </canvas>
                     </div>
             </div>
-
             
-            <div class="data-wrapper row downloadcv-wrapper">
+            <!-- <div class="data-wrapper row downloadcv-wrapper">
                 <a href="" class="btn-downloadlink">
                   <span>Download CV</span>
                 </a>  
-            </div>
+            </div> -->
             
             <div class="data-wrapper row">
               <div class="left-data-box col-12 col-lg-6">
@@ -615,26 +615,23 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/fullpage.min.js"></script>
 <script src="js/jquery.tagcanvas.min.js"></script>
-
+<script src="js/jquery.niceScroll.min.js"></script>
 <script src="js/script.js"></script>
 <script type="text/javascript">
-var myFullpage = new fullpage('#fullpage', {
-    // sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
-    anchors: ['slideOne', 'slideTwo', 'slideThree', 'slideFour'],
-    menu: '#menu',
-    scrollingSpeed: 1000,
-    loopBottom: true,
-    loopTop: true,
-    dragAndMove: true,
-    easing: 'easeInOutCubic',
-    lazyLoad: true,
-    afterLoad: function(anchorLink, index) {
-      history.pushState(null, null, "index.html");
-    }
-});
 $(function () {
+// $(".left-area").niceScroll({
+//     cursorcolor:"#4c43ff",
+//     cursorwidth:"5px",
+//     cursorborder:"0px solid #000",
+//     scrollspeed:60,
+//     autohidemode:true,
+//     // background:'#383737',
+//     horizrailenabled:false,
+//     touchbehavior:true,
+//     smoothscroll:true
+// });  
+
   $('[data-toggle="tooltip"]').tooltip()
 })
 </script>
