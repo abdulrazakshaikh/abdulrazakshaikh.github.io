@@ -61,9 +61,29 @@ body {
 }
 .left-area{
 	padding: 20px 50px;
-	/*overflow-x: hidden;*/
+	overflow-x: hidden !important;
+	/*overflow-y: visible !important;*/
+	/*overflow-y: hidden  !important;*/
 }
-.left-area.scroll{
+.left-area{
+	overflow-x: hidden;
+	overflow-y: visible;
+	-webkit-scroll-behavior: smooth;
+    scroll-behavior: smooth;
+    -webkit-scroll-snap-type: mandatory;
+    scroll-snap-type: mandatory;
+    -webkit-scroll-snap-points-y: repeat(100%);
+    scroll-snap-points-y: repeat(100%);
+}
+.left-area::-webkit-scrollbar{
+	width: 3px;
+}
+
+.left-area::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	background-color: var(--ars-color-basicprimary);
+}
+/*.left-area.scroll{
 	overflow-x: hidden;
 	overflow-y: visible;
 	-webkit-scroll-behavior: smooth;
@@ -80,7 +100,7 @@ body {
 .left-area.scroll::-webkit-scrollbar-thumb{
 	border-radius: 10px;
 	background-color: var(--ars-color-basicprimary);
-}
+}*/
 
 
 .right-area{
@@ -633,9 +653,9 @@ ul.skills-list li .icon-wrap img{
 
 
 @media screen and (max-width: 767px){
-	body{
+	/*body{
 		overflow-y: visible !important;
-	}
+	}*/
 
 	.carousel-nav{
 		display: none;
