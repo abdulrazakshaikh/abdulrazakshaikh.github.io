@@ -61,11 +61,8 @@ body {
 }
 .left-area{
 	padding: 20px 50px;
-	overflow-x: hidden !important;
-	/*overflow-y: visible !important;*/
-	/*overflow-y: hidden  !important;*/
 }
-.left-area{
+/*.left-area{
 	overflow-x: hidden;
 	overflow-y: visible;
 	-webkit-scroll-behavior: smooth;
@@ -82,8 +79,8 @@ body {
 .left-area::-webkit-scrollbar-thumb{
 	border-radius: 10px;
 	background-color: var(--ars-color-basicprimary);
-}
-/*.left-area.scroll{
+}*/
+.left-area.scroll{
 	overflow-x: hidden;
 	overflow-y: visible;
 	-webkit-scroll-behavior: smooth;
@@ -100,7 +97,7 @@ body {
 .left-area.scroll::-webkit-scrollbar-thumb{
 	border-radius: 10px;
 	background-color: var(--ars-color-basicprimary);
-}*/
+}
 
 
 .right-area{
@@ -567,6 +564,9 @@ ul.skills-list li .icon-wrap img{
     right: 10px;
 }*/
 @media screen and (min-width: 768px){
+	body{
+		overflow: hidden;
+	}
 	.left-area, .right-area{height: 100vh;}
 	.main-title{
 		text-align: right;
@@ -634,7 +634,7 @@ ul.skills-list li .icon-wrap img{
 	    right: 0;
 	    width: var(--mockupmobile-width);
 	    height: 100%;
-	    transform: translate(140px, 39%);
+	    transform: translate(140px, 18%);
 	}
 
 	.carousel-content-wrap.left-mock.mobile-view .caption-wrap{
@@ -647,7 +647,7 @@ ul.skills-list li .icon-wrap img{
 	    left: 0;
 	    width: var(--mockupmobile-width);
 	    height: 100%;
-	    transform: translate(-140px, 39%);
+	    transform: translate(-140px, 18%);
 	}
 }
 
@@ -655,6 +655,9 @@ ul.skills-list li .icon-wrap img{
 @media screen and (max-width: 767px){
 	/*body{
 		overflow-y: visible !important;
+	}*/
+	/*body{
+		overflow: hidden;
 	}*/
 
 	.carousel-nav{
