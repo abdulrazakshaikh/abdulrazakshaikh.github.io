@@ -17,6 +17,12 @@ $(".nav-tabs .nav-link").click(function(){
 });
 
 
+// tooltip
+$(function () {
+  $('[data-bs-toggle="tooltip"]').tooltip()
+});
+
+
 // Skills TagCloud Canvas
 $(document).ready(function() {
     if (!$('#myCanvas').tagcanvas({
@@ -42,12 +48,32 @@ $(document).ready(function() {
     }
 });
 
+// Intro Carousel
+$('.introcontainer').fsScroll({
+    selectors: {
+      sections: '.introwrap',
+      section: '.introitem',
+      page:'.page',
+      active:'.active'
+    },
+    keyboard: true,
+    loop: true,
+    pagination: true,
+    
+    // beforeScroll: function(el, index) {
+    //   el.find('h1').addClass('text-animate');
+    // },
 
-$('#home-tab').click(function(e) {
-    e.preventDefault();
-    if ($(window).width() < 767)
-    { $('.carousel-nav').hide(); }
+    // afterScroll: function(el, index) {
+    //   el.find('h1').removeClass('text-animate');
+    // }
 });
+
+// $('#home-tab').click(function(e) {
+//     e.preventDefault();
+//     if ($(window).width() < 767)
+//     { $('.carousel-nav').hide(); }
+// });
 
 // ScrollBar
 // $(".nav-tabs .nav-link").click(function(){
@@ -65,15 +91,26 @@ $('#home-tab').click(function(e) {
 // });
 
 
+// $("#about-tab, #work-tab, #contact-tab").click(function(){
+//     $('.left-area').addClass('scroll');
+//     $("body").css("overflow-y", "auto");
+// });
+
+
 $("#about-tab, #work-tab, #contact-tab").click(function(){
-    $('.left-area').addClass('scroll');
-    $("body").css("overflow-y", "auto");
+    $(".content-area").css("overflow-x", "hidden");
 });
 $("#home-tab").click(function(){
-    $('.left-area').removeClass('scroll');
-    $("body").css("overflow-y", "hidden");
+    $(".content-area").css("overflow-x", "visible");
 });
 
 
+// $("#about-tab, #work-tab, #contact-tab").click(function(){
+//     $('.content-area').addClass('scroll');
+// });
+// $("#home-tab").click(function(){
+//     $('.content-area').removeClass('scroll');
+//     $(".content-area").css("overflow", "hidden");
+// });
 
 
