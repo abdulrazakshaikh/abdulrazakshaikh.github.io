@@ -10,6 +10,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/mystyle.css" rel="stylesheet">
     <link rel="stylesheet" href="css/jquery.fsscroll.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
 <style type="text/css">
 
@@ -82,6 +83,32 @@
     width: 0px;
   }
 }
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
 </style>
 
 </head>
@@ -147,7 +174,7 @@
       <div class="col-12 px-0">
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active h-100vh" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <div class="introcontainer" data-fs-scroll>
+            <!-- <div class="introcontainer" data-fs-scroll>
               <div class="introwrap">
                 <div class="introitem section0">
                   <div class="row carousel-content-wrap right-mock mobile-view">
@@ -187,8 +214,8 @@
                 <div class="introitem section3">
                   <div class="row carousel-content-wrap left-mock tablet-view">
                     <div class="caption-wrap">
-                      <a class="project-name">ONEPOS</a>
-                      <p class="project-desc">Restaurant Pos Billing Management</p>
+                      <a class="project-name">RESTAURANT POS</a>
+                      <p class="project-desc">Restaurant Pos Billing & Customer Management</p>
                     </div>
                     <div class="mockup-wrap">
                       <img src="img/tablet-mockup.png" loading="lazy" class="img-fluid" alt="">
@@ -197,7 +224,64 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
+
+  <div class="swiper-container introcontainer">
+    <div class="swiper-wrapper introwrap">
+      <div class="swiper-slide introitem section0">
+        <div class="row carousel-content-wrap right-mock mobile-view">
+          <div class="caption-wrap">
+            <a class="project-name">ALCOHOL</a>
+            <p class="project-desc">Order Alcohol from your home</p>
+          </div>
+          <div class="mockup-wrap">
+            <img src="img/alcohol-mockup.png" loading="lazy" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide introitem section1">
+        <div class="row carousel-content-wrap left-mock mobile-view">
+          <div class="caption-wrap">
+            <a class="project-name">ONEGATE</a>
+            <p class="project-desc">Gatekeeper App for  Managing Society Visitors</p>
+          </div>
+          <div class="mockup-wrap">
+            <img src="img/gatekeeper-mockup.png" loading="lazy" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide introitem section2">
+        <div class="row carousel-content-wrap right-mock mobile-view">
+          <div class="caption-wrap">
+            <a class="project-name">APARTMENT</a>
+            <p class="project-desc">Society App for Managing society related activities</p>
+            
+          </div>
+          <div class="mockup-wrap">
+            <img src="img/apartment-mockup.png" loading="lazy" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide introitem section3">
+        <div class="row carousel-content-wrap left-mock tablet-view">
+          <div class="caption-wrap">
+            <a class="project-name">RESTAURANT POS</a>
+            <p class="project-desc">Restaurant Pos Billing & Customer Management</p>
+          </div>
+          <div class="mockup-wrap">
+            <img src="img/tablet-mockup.png" loading="lazy" class="img-fluid" alt="">
+            
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+     <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+
           </div>
           <div class="tab-pane fade pb-5" id="about" role="tabpanel" aria-labelledby="about-tab">
               <div class="data-wrapper row text-center">
@@ -539,7 +623,16 @@ $(document).ready(function() {
   $('.loader-wrap').addClass('is-hidden');
 });
 </script>
-
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+      direction: 'vertical',
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+</script>
 <script>
   // $('.introcontainer').fsScroll({
   //   selectors: {
