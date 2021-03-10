@@ -109,6 +109,28 @@
   -webkit-align-items: center;
   align-items: center;
 }
+@media screen and (max-width: 767px) {
+.swiper-container-vertical>.swiper-pagination-bullets {
+    right: 0px;
+    bottom: 60px;
+    top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+} 
+.swiper-container-vertical>.swiper-pagination-bullets .swiper-pagination-bullet {
+ margin: 0 3px;
+ display: block;
+}
+.swiper-pagination-bullet-active{
+    background: var(--ars-color-basicprimary); 
+    width: 15px;
+    height: 8px;
+    border-radius: 15px;
+}
+}
 </style>
 
 </head>
