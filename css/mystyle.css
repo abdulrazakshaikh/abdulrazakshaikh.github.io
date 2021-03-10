@@ -369,6 +369,11 @@ body {
 	.caption-wrap .project-name{
 		font-size: 36px;
 	}
+	.introitem{
+		display: flex;
+		align-items: flex-start !important;
+	}
+
 }
 /*-------------------------------CAROUSEL END--------------------------------*/
 
