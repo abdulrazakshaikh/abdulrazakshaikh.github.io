@@ -699,7 +699,7 @@ ul.skills-list li .icon-wrap img{
 	.main-title .name .im {font-size: 1.35rem}
 }
 @media screen and (max-width: 767px){
-	.header{height: auto; width: 100%;}
+	.header{height: auto; width: 100%; background-color: rgba(225, 226, 230, 0.8)}
 	.main-title{width: 100%;}
 	.navbar-toggler, .navbar-toggler:focus{
 		background-color: var(--ars-color-secondary);
