@@ -10,8 +10,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="img/icon.png">
     <link href="css/mystyle.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/jquery.fsscroll.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
 
 <style type="text/css">
 
@@ -665,7 +664,6 @@
 <script src="js/bootstrap.bundle.min.js"></script>
 
 <script src="js/jquery.tagcanvas.min.js"></script>
-<script src="js/jquery.fsscroll.min.js"></script>
 <script src="js/script.js"></script>
 <script type="text/javascript">
 // $(window).load(function() {
@@ -678,10 +676,21 @@ $(document).ready(function() {
     },1000);
 });
 </script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="js/swiper-bundle.min.js"></script>
 <script>
     var swiper = new Swiper('.swiper-container', {
       direction: 'vertical',
+      parallax: true,
+      lazy: true,
+      grabCursor: true,
+      mousewheel: true,
+      loop: true,
+      watchSlidesProgress: true,
+      paginationClickable: true,
+      autoplay: {
+        delay: 3000,
+      },
+
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
