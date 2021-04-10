@@ -12,7 +12,8 @@
 	--ars-font-secondary : Anton;
 	
 	
-    --ars-color-basicprimary: #4c43ff;
+    /*--ars-color-basicprimary: #4c43ff;*/
+    --ars-color-basicprimary: #87ab3f;
 	--ars-color-primary: #1c1d1f;
 	--ars-color-secondary: #808184;
 
@@ -23,6 +24,10 @@
 	--mockuptablet-width-small : 100%;
 
 	--navbar-height : 54px;
+	/*--bg-pattern : url('https://www.toptal.com/designers/subtlepatterns/patterns/dot-grid.png');*/
+	/*--bg-pattern : url('https://www.toptal.com/designers/subtlepatterns/patterns/morocco.png');*/
+	/*--bg-pattern : url('https://www.toptal.com/designers/subtlepatterns/patterns/light-grey-terrazzo.png');*/
+	/*--bg-pattern : url('https://www.toptal.com/designers/subtlepatterns/patterns/memphis-colorful.png');*/
 }
 a{
     color: var(--ars-color-primary);
@@ -33,9 +38,9 @@ body {
     font-family: var(--ars-font-primary);
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.5
-    /*background-color: #e8eaed;*/
-    background: url('https://www.toptal.com/designers/subtlepatterns/patterns/gridme.png');
+    line-height: 1.5;
+    background-color: #e8eaed;
+    /*background: var(--bg-pattern);*/
     /*overflow-y: hidden;*/
     overflow: hidden;
 }
@@ -58,7 +63,12 @@ body {
     position: relative;
     width: 100px;
     height: auto;
-    background: var(--ars-color-basicprimary);
+    /*background: var(--ars-color-basicprimary);*/
+    background: #dc1a5c;
+    background: -moz-linear-gradient(left,  #dc1a5c 0%, #ea3a50 50%, #f37042 100%);
+    background: -webkit-linear-gradient(left,  #dc1a5c 0%,#ea3a50 50%,#f37042 100%);
+    background: linear-gradient(to right,  #dc1a5c 0%,#ea3a50 50%,#f37042 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dc1a5c', endColorstr='#f37042',GradientType=1 );
     text-align: center;
     padding: 5px;
     font-family: var(--ars-font-primary);
@@ -77,7 +87,8 @@ body {
     top: auto;
     bottom: -10px;
     border: 10px solid;
-    border-color: transparent transparent transparent var(--ars-color-basicprimary);
+    /*border-color: transparent transparent transparent var(--ars-color-basicprimary);*/
+    border-color: transparent transparent transparent #df205a;
 }
 
 .navbar-head{
@@ -154,7 +165,12 @@ body {
 }
 .main-nav.nav .nav-item .nav-link:before{
     content: '';
-    background: var(--ars-color-basicprimary);
+    /*background: var(--ars-color-basicprimary);*/
+    background: #dc1a5c;
+    background: -moz-linear-gradient(left,  #dc1a5c 0%, #ea3a50 50%, #f37042 100%);
+    background: -webkit-linear-gradient(left,  #dc1a5c 0%,#ea3a50 50%,#f37042 100%);
+    background: linear-gradient(to right,  #dc1a5c 0%,#ea3a50 50%,#f37042 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dc1a5c', endColorstr='#f37042',GradientType=1 );
     /*background: #e2e3e7;*/
     width: 100%;
     height: 3px;
@@ -172,7 +188,12 @@ body {
 }
 .main-nav.nav .nav-item .nav-link:after{
     content: '';
-    background: var(--ars-color-basicprimary);
+    /*background: var(--ars-color-basicprimary);*/
+    background: #dc1a5c;
+	background: -moz-linear-gradient(left,  #dc1a5c 0%, #ea3a50 50%, #f37042 100%);
+	background: -webkit-linear-gradient(left,  #dc1a5c 0%,#ea3a50 50%,#f37042 100%);
+	background: linear-gradient(to right,  #dc1a5c 0%,#ea3a50 50%,#f37042 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dc1a5c', endColorstr='#f37042',GradientType=1 );
     width: 100%;
     height: 34px;
     position: absolute;
