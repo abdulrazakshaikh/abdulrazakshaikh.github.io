@@ -1,0 +1,70 @@
+[data-fs-scroll] {
+  position: relative;
+}
+
+[data-fs-scroll] .page {
+  position: fixed;
+  list-style: none;
+}
+
+[data-fs-scroll] .page.vertical {
+  right: 40%;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  z-index: 9999;
+}
+
+[data-fs-scroll] .page.horizontal {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+[data-fs-scroll] .page li {
+  width: 8px;
+  height: 8px;
+  background: rgba(76, 67, 255,.6);
+  border-radius: 50%;
+  margin: 5px 2px;
+  cursor: pointer;
+}
+
+[data-fs-scroll] .page li.active {
+  border-radius: 6px;
+  background: rgba(76, 67, 255, 1);
+}
+
+[data-fs-scroll] .page.horizontal li {
+  display: inline-block;
+}
+
+[data-fs-scroll] .page.horizontal .active{
+  width: 14px;
+}
+
+[data-fs-scroll] .page.vertical .active {
+  height: 14px;
+}
+
+@media screen and (max-width: 767px){
+  [data-fs-scroll] .page.vertical{
+    right: 10px;
+    bottom: 0;
+    top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  [data-fs-scroll] .page.vertical .active{
+    width: 15px;
+    height: 8px;
+  }
+}
