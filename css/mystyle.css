@@ -4,13 +4,16 @@
 /*@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');*/
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Frijole&display=swap');
 /*---------------------------------FONTS END---------------------------------*/
 
 /*-------------------------------COMMON START--------------------------------*/
 :root{
 	--ars-font-primary : Josefin Sans;
 	--ars-font-secondary : Anton;
-	
+	/*--ars-font-secondary : Hanalei Fill;*/
+	--ars-font-third : Frijole;
 	
     /*--ars-color-basicprimary: #4c43ff;*/
     --ars-color-basicprimary: #87ab3f;
@@ -46,6 +49,108 @@ body {
 }
 .h-100vh{height: 100vh;}
 /*--------------------------------COMMON END---------------------------------*/
+
+/*----------------------------MOUSE CURSOR START-----------------------------*/
+.mouse-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    visibility: hidden;
+}
+.cursor-inner {
+    margin-left: -3px;
+    margin-top: -3px;
+    width: 6px;
+    height: 6px;
+    z-index: 9999;
+    background-color: #000;
+    -webkit-transition: width .3s ease-in-out,height .3s ease-in-out,margin .3s ease-in-out,opacity .3s ease-in-out;
+    transition: width .3s ease-in-out,height .3s ease-in-out,margin .3s ease-in-out,opacity .3s ease-in-out;
+}
+.cursor-outer {
+    margin-left: -15px;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #000;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 9999;
+    opacity: .5;
+    -webkit-transition: all .08s ease-out;
+    transition: all .08s ease-out;
+}
+/*-----------------------------MOUSE CURSOR END------------------------------*/
+
+/*-----------------------TEXT OVERLAY ANIMATION START------------------------*/
+.overlay_effect {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    overflow: hidden;
+}
+
+.overlay_effect:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #e2e3e7;
+    z-index: 1;
+}
+
+.overlay_effect:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+body.loaded .overlay_effect:before {
+    z-index: 2;
+    /*background-color: #454545;*/
+    animation: anim 2s cubic-bezier(.77,0,.175,1) both;
+	
+
+	/*background: #dc1a5c;
+    background: -moz-linear-gradient(left, #dc1a5c 0%, #ea3a50 50%, #f37042 100%);
+    background: -webkit-linear-gradient(left, #dc1a5c 0%,#ea3a50 50%,#f37042 100%);
+    background: linear-gradient(to right, #dc1a5c 0%,#ea3a50 50%,#f37042 100%);*/
+ 
+ 	/*background-image: linear-gradient(to right, #434343 0%, black 100%);*/
+
+    background: #dc1a5c;
+    background: -moz-linear-gradient(left, #dc1a5c 0%, #ea3a50 50%, #f37042 100%);
+    background: -webkit-linear-gradient(left, #dc1a5c 0%,#ea3a50 50%,#f37042 100%);
+    background: linear-gradient(to right, #dc1a5c 0%,#ea3a50 50%,#f37042 100%);
+
+}
+
+body.loaded .overlay_effect:after {
+    animation: anim2 2s cubic-bezier(.77,0,.175,1) both
+}
+@keyframes anim {
+    0% {transform: translateX(-100%)}
+    50% {transform: translateX(0)}
+    100% {transform: translateX(110%)}
+}
+
+@keyframes anim2 {
+    0% {transform: translateX(0)}
+    100% {transform: translateX(110%)}
+}
+/*------------------------TEXT OVERLAY ANIMATION END-------------------------*/
 
 /*-------------------------------NAVBAR START--------------------------------*/
 .header{
@@ -108,15 +213,24 @@ body {
 	line-height: 1;
 	text-transform: uppercase;
 	margin: 10px 0;
+	position: relative;
+	overflow:  hidden;
+	display: table;
 }
 .main-title .name{
 	font-family: var(--ars-font-secondary);
 	font-size: 65px;
 	color: var(--ars-color-primary);
+	/*margin: 0px;*/
 }
+.main-title .name .name-text{
+	display: inline-block;
+}
+
 .main-title .name .im{
 	font-size: 1.75rem; 
 	vertical-align: top; 
+	margin-right: 10px;
 	top: 5px;
 	position: relative;
 }
@@ -241,6 +355,36 @@ body {
 /*------------------------------SCROLLBAR END------------------------------*/
 
 /*------------------------------CAROUSEL START-------------------------------*/
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;  
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.swiper-pagination-bullet-active{
+  background: var(--ars-color-basicprimary); 
+  width: 8px;
+    height: 15px;
+    border-radius: 15px;
+}
 
 .introcontainer, .introwrap, .introitem{
 	position: relative;
@@ -289,7 +433,8 @@ body {
 
 .caption-wrap .project-name{
 	font-size: 52px;
-	font-family: var(--ars-font-secondary);
+	font-family: var(--ars-font-third);
+	line-height: 1;
 	/*color: var(--ars-color-primary);*/
 	color: transparent;
 	letter-spacing: 3px;
@@ -372,7 +517,25 @@ body {
 	    align-items: center;
 	}
 }
-@media screen and (max-width: 767px){
+@media screen and (max-width: 767px) {
+	.swiper-container-vertical>.swiper-pagination-bullets {
+	    right: 0px;
+	    bottom: 100px;
+	    top: auto;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    width: 100%;
+	    margin-bottom: 10px;
+	} 
+	.swiper-container-vertical>.swiper-pagination-bullets .swiper-pagination-bullet {
+	 margin: 0 3px;
+	 display: block;
+	}
+	.swiper-pagination-bullet-active{
+	    width: 15px;
+	    height: 8px;
+	}
 	.carousel-content-wrap.mobile-view .mockup-wrap{
 	    width: var(--mockupmobile-width-small);
 	    margin: auto;
