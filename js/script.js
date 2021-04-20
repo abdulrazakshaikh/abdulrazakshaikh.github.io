@@ -1,5 +1,48 @@
+jQuery(document).ready(function() {
+    abdul_tm_cursor();
+});
 
+$(window).load('body', function() {
+    abdul_tm_my_load();
+});
 
+function abdul_tm_my_load() {
+    "use strict";
+    var speed = 500;
+    setTimeout(function() {
+        abdul_tm_preloader();
+    }, speed);
+    setTimeout(function() {
+        jQuery('body').addClass('loaded');
+    }, speed + 2000);
+    // setTimeout(function(){
+    //   $('.loader-wrap').addClass('is-hidden');
+    // }, speed + 1000);
+    // setTimeout(function() {
+    //     jQuery('.spinner-border').remove();
+    // }, speed + 1000);
+    // setTimeout(function() {
+    //     jQuery('.shane_tm_down').addClass('loaded');
+    // }, speed + 2000);
+    // setTimeout(function() {
+    //     jQuery('.shane_tm_topbar').addClass('loaded');
+    // }, speed + 4200);
+}
+function abdul_tm_preloader() {
+    "use strict";
+    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+    var preloader = $('#preloader');
+    if (!isMobile) {
+        setTimeout(function() {
+            preloader.addClass('preloaded');
+        }, 800);
+        setTimeout(function() {
+            preloader.remove();
+        }, 2000);
+    } else {
+        preloader.remove();
+    }
+}
 // on click navmenu close
 $(document).ready(function() {
     $(".main-nav .nav-item .nav-link").click(function(e) {
@@ -49,53 +92,45 @@ $(document).ready(function() {
 });
 
 // Intro Carousel
-$('.introcontainer').fsScroll({
-    selectors: {
-      sections: '.introwrap',
-      section: '.introitem',
-      page:'.page',
-      active:'.active'
-    },
-    keyboard: true,
-    loop: true,
-    pagination: true,
+// $('.introcontainer').fsScroll({
+//     selectors: {
+//       sections: '.introwrap',
+//       section: '.introitem',
+//       page:'.page',
+//       active:'.active'
+//     },
+//     keyboard: true,
+//     loop: true,
+//     pagination: true,
     
-    // beforeScroll: function(el, index) {
-    //   el.find('h1').addClass('text-animate');
-    // },
+//     // beforeScroll: function(el, index) {
+//     //   el.find('h1').addClass('text-animate');
+//     // },
 
-    // afterScroll: function(el, index) {
-    //   el.find('h1').removeClass('text-animate');
-    // }
+//     // afterScroll: function(el, index) {
+//     //   el.find('h1').removeClass('text-animate');
+//     // }
+// });
+$(document).ready(function() {
+var swiper = new Swiper('.swiper-container', {
+      direction: 'vertical',
+      parallax: true,
+      lazy: true,
+      grabCursor: true,
+      mousewheel: true,
+      loop: true,
+      watchSlidesProgress: true,
+      paginationClickable: true,
+      autoplay: {
+        delay: 5000,
+      },
+
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
 });
-
-// $('#home-tab').click(function(e) {
-//     e.preventDefault();
-//     if ($(window).width() < 767)
-//     { $('.carousel-nav').hide(); }
-// });
-
-// ScrollBar
-// $(".nav-tabs .nav-link").click(function(){
-//     $(".left-area").niceScroll({
-//         cursorcolor:"#4c43ff",
-//         cursorwidth:"5px",
-//         cursorborder:"0px solid #000",
-//         scrollspeed:60,
-//         autohidemode:true,
-//         // background:'#383737',
-//         horizrailenabled:false,
-//         touchbehavior:true,
-//         smoothscroll:true
-//     });
-// });
-
-
-// $("#about-tab, #work-tab, #contact-tab").click(function(){
-//     $('.left-area').addClass('scroll');
-//     $("body").css("overflow-y", "auto");
-// });
-
 
 $("#about-tab, #work-tab, #contact-tab").click(function(){
     $(".content-area").css("overflow-x", "hidden");
@@ -105,12 +140,32 @@ $("#home-tab").click(function(){
 });
 
 
-// $("#about-tab, #work-tab, #contact-tab").click(function(){
-//     $('.content-area').addClass('scroll');
-// });
-// $("#home-tab").click(function(){
-//     $('.content-area').removeClass('scroll');
-//     $(".content-area").css("overflow", "hidden");
-// });
 
-
+function abdul_tm_cursor() {
+    "use strict";
+    var myCursor = jQuery('.mouse-cursor');
+    if (myCursor.length) {
+        if ($("body")) {
+            const e = document.querySelector(".cursor-inner")
+              , t = document.querySelector(".cursor-outer");
+            let n, i = 0, o = !1;
+            window.onmousemove = function(s) {
+                o || (t.style.transform = "translate(" + s.clientX + "px, " + s.clientY + "px)"),
+                e.style.transform = "translate(" + s.clientX + "px, " + s.clientY + "px)",
+                n = s.clientY,
+                i = s.clientX
+            }
+            ,
+            $("body").on("mouseenter", "a, .cursor-pointer", function() {
+                e.classList.add("cursor-hover"),
+                t.classList.add("cursor-hover")
+            }),
+            $("body").on("mouseleave", "a, .cursor-pointer", function() {
+                $(this).is("a") && $(this).closest(".cursor-pointer").length || (e.classList.remove("cursor-hover"),
+                t.classList.remove("cursor-hover"))
+            }),
+            e.style.visibility = "visible",
+            t.style.visibility = "visible"
+        }
+    }
+}
