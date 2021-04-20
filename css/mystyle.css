@@ -51,6 +51,7 @@ body {
 /*--------------------------------COMMON END---------------------------------*/
 
 /*----------------------------MOUSE CURSOR START-----------------------------*/
+@media screen and (min-width: 992px){	
 .mouse-cursor {
     position: fixed;
     left: 0;
@@ -84,6 +85,12 @@ body {
     -webkit-transition: all .08s ease-out;
     transition: all .08s ease-out;
 }
+}
+@media screen and (max-width: 991px){
+	.mouse-cursor{
+		display: none;
+	}
+}	
 /*-----------------------------MOUSE CURSOR END------------------------------*/
 
 /*-----------------------TEXT OVERLAY ANIMATION START------------------------*/
