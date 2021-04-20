@@ -12,165 +12,176 @@
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
     <link href="css/jquery.fsscroll.css" rel="stylesheet">
     <link href="css/mystyle.css" rel="stylesheet">
-
-<style type="text/css">
-
-.loader-wrap{
-  /*width: 100vw;
-  height: 100vh;*/
-  /*position: fixed;*/
-  /*background-color: #ffffff;*/
-  /*z-index: 99999;*/
-  /*transition: all 1.4s cubic-bezier(0.770, 0.000, 0.175, 1.000);*/
-  /*-webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);*/
-  /*display: flex;*/
-}
-/*.loader-wrap.is-hidden{
-  -webkit-transform: translate3d(0, -100%, 0);
-  transform: translate3d(0, -100%, 0);
-}*/
-
-.loader-wrap .inner-left, .loader-wrap .inner-right{
+<style>
+#preloader {
     position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
     z-index: 99999;
-    height: 100%;
-    transition: all 1.25s cubic-bezier(0.770, 0.000, 0.175, 1.000);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex
 }
-.loader-wrap .inner-left{
+
+#preloader:before,#preloader:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    /*width: 50%;*/
+    height: 100%;
+    z-index: -1;
+    background-color: #000;
+    -webkit-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+}
+#preloader:before{
     width: 58.3333333333%;
-    /*background-color: #4c43ff;*/
-    background: #dc1a5c;
+    /*background: #dc1a5c;
     background: -moz-linear-gradient(left,  #dc1a5c 0%, #ea3a50 50%, #f37042 100%);
     background: -webkit-linear-gradient(left,  #dc1a5c 0%,#ea3a50 50%,#f37042 100%);
-    background: linear-gradient(to right,  #dc1a5c 0%,#ea3a50 50%,#f37042 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dc1a5c', endColorstr='#f37042',GradientType=1 );
-    /*background: url('https://www.toptal.com/designers/subtlepatterns/patterns/canadian-dollar.png');*/
-    left: 0px;
+    background: linear-gradient(to right,  #dc1a5c 0%,#ea3a50 50%,#f37042 100%);*/
 }
-.loader-wrap .inner-right{
+#preloader:after {
     width: 41.6666666667%;
-    /*background-color: #4c43ff;*/
-    background: #5a853b;
+    left: auto;
+    right: 0;
+    /*background: #dc1a5c;
     background: -moz-linear-gradient(right,  #dc1a5c 0%, #ea3a50 50%, #f37042 100%);
     background: -webkit-linear-gradient(right,  #dc1a5c 0%,#ea3a50 50%,#f37042 100%);
-    background: linear-gradient(to left,  #dc1a5c 0%,#ea3a50 50%,#f37042 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dc1a5c', endColorstr='#f37042',GradientType=1 );
-    /*background: -moz-linear-gradient(top,  #5a853b 0%, #88ac3f 50%, #b4ce34 100%);
-    background: -webkit-linear-gradient(top,  #5a853b 0%,#88ac3f 50%,#b4ce34 100%);
-    background: linear-gradient(to bottom,  #5a853b 0%,#88ac3f 50%,#b4ce34 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5a853b', endColorstr='#b4ce34',GradientType=1 );*/
+    background: linear-gradient(to left,  #dc1a5c 0%,#ea3a50 50%,#f37042 100%);*/
+}
 
-    /*background: url('https://www.toptal.com/designers/subtlepatterns/patterns/canadian-dollar.png');*/
-    right: 0px;
+#preloader .loader_line {
+    margin: auto auto auto 58.3333333333%;
+    width: 1px;
+    height: 230px;
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: all .8s ease 0s;
+    -o-transition: all .8s ease 0s;
+    transition: all .8s ease 0s
 }
-.loader-wrap.is-hidden .inner-left{
-  -webkit-transform: translate3d(-100%, 0, 0);
-  transform: translate3d(-100%, 0, 0);
+
+.loader_line:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1px;
+    height: 0%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-color: #fff;
+    -webkit-animation: lineheight 1000ms ease-in-out 0s forwards;
+    -o-animation: lineheight 1000ms ease-in-out 0s forwards;
+    animation: lineheight 1000ms ease-in-out 0s forwards
 }
-.loader-wrap.is-hidden .inner-right{
-  -webkit-transform: translate3d(0, 100%, 0);
-  transform: translate3d(0, 100%, 0);
-}
-.loader-wrap.is-hidden .loading-text{
-  -webkit-transform: translate3d(-100%, 0, 0);
-  transform: translate3d(-100%, 0, 0);
-}
-.loader-wrap .loading-text{
-    color: #ffffff;
-    font-size: 2rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    position: fixed;
-    top: 0px;
-    bottom: 0px;
-    z-index: 999999;
-    width: 100%;
+
+.loader_line:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 1s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    background-color: #999;
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%);
+    -webkit-animation: lineround 1200ms linear 0s infinite;
+    -o-animation: lineround 1200ms linear 0s infinite;
+    animation: lineround 1200ms linear 0s infinite;
+    animation-delay: 2000ms
+}
+.spinner-border{
+    position: absolute;
+    right: 0;
+    max-width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 15rem;
+    height: 15rem;
+    border-width: 0.15em;
+}
+@keyframes lineheight {
+    0% {
+        height: 0%
+    }
+
+    100% {
+        height: 100%
+    }
 }
 
-@media screen and (max-width: 767px) {
-  .loader-wrap .inner-left{
-    width: 100%;
+@keyframes lineround {
+    0% {
+        -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+        -o-transform: translateY(-100%);
+        transform: translateY(-100%)
+    }
+
+    100% {
+        -webkit-transform: translateY(200%);
+        -ms-transform: translateY(200%);
+        -o-transform: translateY(200%);
+        transform: translateY(200%)
+    }
+}
+
+.preloaded .loader_line:after {
+    opacity: 0
+}
+
+.preloaded .loader_line {
+    opacity: 0;
+    height: 100%!important
+}
+
+.preloaded:before,.preloaded:after {
+    -webkit-animation: preloadedzero 300ms ease-in-out 500ms forwards;
+    -o-animation: preloadedzero 300ms ease-in-out 500ms forwards;
+    animation: preloadedzero 300ms ease-in-out 500ms forwards
+}
+.preloaded .spinner-border{
+    opacity: 0
+}
+
+@keyframes preloadedzero {
+    0% {width: 50%}
+    100% {width: 0%}
+}  
+
+@media screen and (max-width: 991px){
+  #preloader:after, #preloader:before{
+    width: 50%;
   }
-  .loader-wrap .inner-right{
-    width: 0px;
+  #preloader .loader_line{
+    margin: auto 15% auto auto;
   }
-}
-
-.swiper-container {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;  
-
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-}
-.swiper-pagination-bullet-active{
-  background: var(--ars-color-basicprimary); 
-  width: 8px;
-    height: 15px;
-    border-radius: 15px;
-}
-@media screen and (max-width: 767px) {
-.swiper-container-vertical>.swiper-pagination-bullets {
-    right: 0px;
-    bottom: 60px;
-    top: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 10px;
-} 
-.swiper-container-vertical>.swiper-pagination-bullets .swiper-pagination-bullet {
- margin: 0 3px;
- display: block;
-}
-.swiper-pagination-bullet-active{
-    width: 15px;
-    height: 8px;
-}
+  .spinner-border{
+    right: 15%;
+  }
 }
 </style>
 </head>
 <body>
-<!-- 
-<div class="page-overlay">
-  <h4 class="percentage-text"></h4>
-  
-</div> -->
-<div class="loader-wrap">
-  <h2 class="loading-text">Loading...</h2>
-  <div class="inner-left"></div>
-  <div class="inner-right"></div>
+<div id="preloader">
+  <div class="spinner-border text-light"></div>
+  <div class="loader_line"></div>
 </div>
-<main class="main-wrapper">
 
+<div class="mouse-cursor cursor-outer"></div>
+<div class="mouse-cursor cursor-inner"></div>
+
+<main class="main-wrapper">
 <header class="header fixed-top">
   <nav class="navbar navbar-expand-md navbar-light p-0">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -179,24 +190,39 @@
     </button>      
     <div class="collapse navbar-collapse" id="navbarNav">
       <div class="navbar-head">
+        
         <div class="main-title text-md-right">
-          <p class="hello-bubble">Hello</p>
-          <a href="#" class="name"><span class="im">I'm</span> Abdul Razak Shaikh</a>
-          <div class="location">Mumbai, India</div>
-          <div class="designation">UI/UX Designer & Developer</div>
+          <p class="hello-bubble">
+            Hello
+          </p>
+          <a href="#" class="name">
+            <span class="im">I'm</span>
+            <span class="name-text">Abdul Razak Shaikh</span>
+            <span class="overlay_effect"></span>
+          </a>
+          <div class="location">
+            Mumbai, India
+            <span class="overlay_effect"></span>
+          </div>
+          <div class="designation">
+            UI/UX Designer & Developer
+            <span class="overlay_effect"></span>
+          </div>
         </div> 
        
         <div class="nav-menu">
           
         <ul class="nav main-nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active " id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+            <a class="nav-link active " id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+            Home<span class="overlay_effect"></span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="about-tab" data-bs-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="false">About</a>
+            <a class="nav-link" id="about-tab" data-bs-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="false">
+            About<span class="overlay_effect"></span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+            <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact<span class="overlay_effect"></span></a>
           </li>
         </ul>
         <ul class="nav social-nav">
@@ -226,146 +252,96 @@
       <div class="col-12 px-0">
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active h-100vh" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <!-- <div class="introcontainer" data-fs-scroll>
-              <div class="introwrap">
-                <div class="introitem section0">
-                  <div class="row carousel-content-wrap right-mock mobile-view">
-                    <div class="caption-wrap">
-                      <a class="project-name">ALCOHOL</a>
-                      <p class="project-desc">Order Alcohol from your home</p>
-                    </div>
-                    <div class="mockup-wrap">
-                      <img src="img/alcohol-mockup.png" loading="lazy" class="img-fluid" alt="">
-                    </div>
+            
+
+          <div class="swiper-container introcontainer">
+            <div class="swiper-wrapper introwrap">
+              <div class="swiper-slide introitem section0">
+                <div class="row carousel-content-wrap right-mock mobile-view">
+                  <div class="caption-wrap">
+                    <a class="project-name">ALCOHOL</a>
+                    <p class="project-desc">Order Alcohol from your home</p>
+
                   </div>
-                  
-                </div>
-                <div class="introitem section1">
-                  <div class="row carousel-content-wrap left-mock mobile-view">
-                    <div class="caption-wrap">
-                      <a class="project-name">ONEGATE</a>
-                      <p class="project-desc">Gatekeeper App for  Managing Society Visitors</p>
-                    </div>
-                    <div class="mockup-wrap">
-                      <img src="img/gatekeeper-mockup.png" loading="lazy" class="img-fluid" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="introitem section2">
-                  <div class="row carousel-content-wrap right-mock mobile-view">
-                    <div class="caption-wrap">
-                      <a class="project-name">APARTMENT</a>
-                      <p class="project-desc">Society App for Managing society related activities</p>
-                      
-                    </div>
-                    <div class="mockup-wrap">
-                      <img src="img/apartment-mockup.png" loading="lazy" class="img-fluid" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="introitem section3">
-                  <div class="row carousel-content-wrap left-mock tablet-view">
-                    <div class="caption-wrap">
-                      <a class="project-name">RESTAURANT POS</a>
-                      <p class="project-desc">Restaurant Pos Billing & Customer Management</p>
-                    </div>
-                    <div class="mockup-wrap">
-                      <img src="img/tablet-mockup.png" loading="lazy" class="img-fluid" alt="">
-                      
-                    </div>
+                  <div class="mockup-wrap">
+                    <img src="img/alcohol-mockup.png" loading="lazy" class="img-fluid" alt="">
+
                   </div>
                 </div>
               </div>
-            </div> -->
-
-  <div class="swiper-container introcontainer">
-    <div class="swiper-wrapper introwrap">
-      <div class="swiper-slide introitem section0">
-        <div class="row carousel-content-wrap right-mock mobile-view">
-          <div class="caption-wrap">
-            <a class="project-name">ALCOHOL</a>
-            <p class="project-desc">Order Alcohol from your home</p>
-          </div>
-          <div class="mockup-wrap">
-            <img src="img/alcohol-mockup.png" loading="lazy" class="img-fluid" alt="">
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide introitem section1">
-        <div class="row carousel-content-wrap left-mock mobile-view">
-          <div class="caption-wrap">
-            <a class="project-name">ONEGATE</a>
-            <p class="project-desc">Gatekeeper App for  Managing Society Visitors</p>
-          </div>
-          <div class="mockup-wrap">
-            <img src="img/gatekeeper-mockup.png" loading="lazy" class="img-fluid" alt="">
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide introitem section2">
-        <div class="row carousel-content-wrap right-mock mobile-view">
-          <div class="caption-wrap">
-            <a class="project-name">APARTMENT</a>
-            <p class="project-desc">Society App for Managing society related activities</p>
-            
-          </div>
-          <div class="mockup-wrap">
-            <img src="img/apartment-mockup.png" loading="lazy" class="img-fluid" alt="">
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide introitem section3">
-        <div class="row carousel-content-wrap left-mock tablet-view">
-          <div class="caption-wrap">
-            <a class="project-name">RESTAURANT POS</a>
-            <p class="project-desc">Restaurant Pos Billing & Customer Management</p>
-          </div>
-          <div class="mockup-wrap">
-            <img src="img/tablet-mockup.png" loading="lazy" class="img-fluid" alt="">
-            
-          </div>
-        </div>
-      </div>
+              <div class="swiper-slide introitem section1">
+                <div class="row carousel-content-wrap left-mock mobile-view">
+                  <div class="caption-wrap">
+                    <a class="project-name">ONEGATE</a>
+                    <p class="project-desc">Gatekeeper App for  Managing Society Visitors</p>
+                  </div>
+                  <div class="mockup-wrap">
+                    <img src="img/gatekeeper-mockup.png" loading="lazy" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide introitem section2">
+                <div class="row carousel-content-wrap right-mock mobile-view">
+                  <div class="caption-wrap">
+                    <a class="project-name">APARTMENT</a>
+                    <p class="project-desc">Society App for Managing society related activities</p>
+                    
+                  </div>
+                  <div class="mockup-wrap">
+                    <img src="img/apartment-mockup.png" loading="lazy" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide introitem section3">
+                <div class="row carousel-content-wrap left-mock tablet-view">
+                  <div class="caption-wrap">
+                    <a class="project-name">RESTAURANT POS</a>
+                    <p class="project-desc">Restaurant Pos Billing & Customer Management</p>
+                  </div>
+                  <div class="mockup-wrap">
+                    <img src="img/tablet-mockup.png" loading="lazy" class="img-fluid" alt="">
+                    
+                  </div>
+                </div>
+              </div>
 
 
-    </div>
-     <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
-  </div>
+            </div>
+             <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
 
 
           </div>
           <div class="tab-pane fade pb-5" id="about" role="tabpanel" aria-labelledby="about-tab">
-              <div class="data-wrapper row text-center">
+              <div class="data-wrapper row text-center position-relative">
                 <div id="myCanvasContainer">
                   <canvas width="500" height="500" id="myCanvas">
-                      <ul id="tags" style="display: none;">
-                        <li><a href="">HTML5</a></li>
-                        <li><a href="">CSS3</a></li>
-                        <li><a href="">Javascript</a></li>
-                        <li><a href="">Jquery</a></li>
-                        <li><a href="">Sass</a></li>
-                        <li><a href="">Less</a></li>
-                        <li><a href="">Stylus</a></li>
-                        <li><a href="">Sketchapp</a></li>
-                        <li><a href="">Photoshop</a></li>
-                        <li><a href="">Illustrator</a></li>
-                        <li><a href="">Coreldraw</a></li>
-                        <li><a href="">Inkscape</a></li>
-                        <li><a href="">Bootstrap</a></li>
-                        <li><a href="">Material UI</a></li>
-                        <li><a href="">Framework7</a></li>
-                        <li><a href="">Ionic</a></li>
-                        <li><a href="">Wordpress</a></li>
-                        <li><a href="">Media queries</a></li>
-                        <li><a href="">RWD</a></li>
-                        <li><a href="">Canvas</a></li>
-                        <li><a href="">Invision</a></li>
-                        <li><a href="">Flexbox</a></li>
-                        <li><a href="">Agile</a></li>
-                        <li><a href="">Git</a></li>
-                        <li><a href="">Mockflow</a></li>
-                      </ul>
+                    <ul id="tags" style="display: none;">
+                      <li><a href="">HTML5</a></li>
+                      <li><a href="">CSS3</a></li>
+                      <li><a href="">Javascript</a></li>
+                      <li><a href="">Jquery</a></li>
+                      <li><a href="">Sass</a></li>
+                      <li><a href="">Less</a></li>
+                      <li><a href="">Sketchapp</a></li>
+                      <li><a href="">Photoshop</a></li>
+                      <li><a href="">Illustrator</a></li>
+                      <li><a href="">Coreldraw</a></li>
+                      <li><a href="">Inkscape</a></li>
+                      <li><a href="">Bootstrap</a></li>
+                      <li><a href="">Material UI</a></li>
+                      <li><a href="">Framework7</a></li>
+                      <li><a href="">Ionic</a></li>
+                      <li><a href="">Media queries</a></li>
+                      <li><a href="">RWD</a></li>
+                      <li><a href="">Canvas</a></li>
+                      <li><a href="">Invision</a></li>
+                      <li><a href="">Flexbox</a></li>
+                      <li><a href="">Agile</a></li>
+                      <li><a href="">Git</a></li>
+                      <li><a href="">Mockflow</a></li>
+                    </ul>
                   </canvas>
                 </div>
               </div>
@@ -630,7 +606,10 @@
                   <div class="email-headinner">
                     <h5 class="display-5 email-text"> Email</h5>
                     <a href="mailto:xxxxxxxx@gmail.com" class="email text-center">
-                      <h4 class="email-address">abdulrazak_s@outlook.com</h4>
+                      <h4 class="email-address">
+                      abdulrazak_s@outlook.com
+                      <span class="overlay_effect"></span>
+                      </h4>
                     </a>
                   </div>
                 </div>
@@ -644,7 +623,10 @@
                   <div class="mobile-headinner">
                     <h5 class="display-5 mobile-text"> Mobile</h5>
                     <a href="mailto:xxxxxxxx@gmail.com?subject=mail" class="mobile text-center">
-                      <h4 class="mobile-address">+91 9819992152</h4>
+                      <h4 class="mobile-address">
+                      +91 9819992152
+                      <span class="overlay_effect"></span>
+                      </h4>
                     </a>
                   </div>
                 </div>
@@ -661,63 +643,14 @@
 
 </main>
 
+
+
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/jquery.fsscroll.min.js"></script>
 <script src="js/jquery.tagcanvas.min.js"></script>
 <script src="js/script.js"></script>
-<script type="text/javascript">
-// $(window).load(function() {
-//     // Animate loader off screen
-//     $(".loader-wrap").hide();;
-// });
-$(document).ready(function() {
-    setTimeout(function(){
-      $('.loader-wrap').addClass('is-hidden');
-    },1000);
-});
 </script>
 <script src="js/swiper-bundle.min.js"></script>
-<script>
-    var swiper = new Swiper('.swiper-container', {
-      direction: 'vertical',
-      parallax: true,
-      lazy: true,
-      grabCursor: true,
-      mousewheel: true,
-      loop: true,
-      watchSlidesProgress: true,
-      paginationClickable: true,
-      autoplay: {
-        delay: 3000,
-      },
-
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    });
-</script>
-<script>
-  // $('.introcontainer').fsScroll({
-  //   selectors: {
-  //     sections: '.introwrap',
-  //     section: '.introitem',
-  //     page:'.page',
-  //     active:'.active'
-  //   },
-  //   keyboard: true,
-  //   loop: true,
-  //   pagination: true,
-    
-  //   // beforeScroll: function(el, index) {
-  //   //   el.find('h1').addClass('text-animate');
-  //   // },
-
-  //   // afterScroll: function(el, index) {
-  //   //   el.find('h1').removeClass('text-animate');
-  //   // }
-  // })
-</script>
 </body>
 </html>
