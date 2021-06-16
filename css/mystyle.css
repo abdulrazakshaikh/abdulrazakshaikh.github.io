@@ -13,10 +13,11 @@
 	--ars-font-primary : Josefin Sans;
 	--ars-font-secondary : Anton;
 	/*--ars-font-secondary : Hanalei Fill;*/
-	--ars-font-third : Frijole;
+	--ars-font-third : Hanalei Fill;
 	
     /*--ars-color-basicprimary: #4c43ff;*/
-    --ars-color-basicprimary: #87ab3f;
+    --ars-color-basicprimary: #2299a0;
+    --ars-color-basicsecondary: #0ebbc5;
 	--ars-color-primary: #1c1d1f;
 	--ars-color-secondary: #808184;
 
@@ -137,10 +138,17 @@ body.loaded .overlay_effect:before {
  
  	/*background-image: linear-gradient(to right, #434343 0%, black 100%);*/
 
-    background: #dc1a5c;
+    /*background: #dc1a5c;
     background: -moz-linear-gradient(left, #dc1a5c 0%, #ea3a50 50%, #f37042 100%);
     background: -webkit-linear-gradient(left, #dc1a5c 0%,#ea3a50 50%,#f37042 100%);
-    background: linear-gradient(to right, #dc1a5c 0%,#ea3a50 50%,#f37042 100%);
+    background: linear-gradient(to right, #dc1a5c 0%,#ea3a50 50%,#f37042 100%);*/
+
+    background: var(--ars-color-basicprimary);
+    background: -moz-linear-gradient(left, var(--ars-color-basicprimary) 0%, var(--ars-color-basicsecondary) 100%);
+    background: -webkit-linear-gradient(left, var(--ars-color-basicprimary) 0%, var(--ars-color-basicsecondary) 100%);
+    background: linear-gradient(to right, var(--ars-color-basicprimary) 0%, var(--ars-color-basicsecondary) 100%);
+
+    
 
 }
 
@@ -213,7 +221,40 @@ body.loaded .overlay_effect:after {
 	width: 100%;
 	height: 100vh;
 }
+/*.main-title-wrapper{
+	width: 100%;
+	display: flex;
+	align-items: flex-end;
+}
+.main-title-wrapper .main-logo{
+	width: 160px;
+    height: 160px;
+    margin-right: 15px;
+    text-align: center;
+    border: 10px solid rgb(28 29 31 / 25%);
+    border-radius: 30px;
+    color: var(--ars-color-primary);
+    font-size: 4rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--ars-font-secondary);
+}
+.main-title{
+	width: 75%;
+}*/
 
+.main-wrap{
+	display: flex;
+	width: 100%;
+}
+.main-wrap .main-logo{
+	width: 200px;
+	margin-right: 15px;
+}
+.main-wrap .main-title{
+}
 .main-title .name, 
 .main-title .location, 
 .main-title .designation{
@@ -286,35 +327,43 @@ body.loaded .overlay_effect:after {
 }
 .main-nav.nav .nav-item .nav-link:before{
     content: '';
-    /*background: var(--ars-color-basicprimary);*/
-    background: #dc1a5c;
+    background: var(--ars-color-basicprimary);
+    /*background: rgba(34,153,160,0.5);*/
+    /*background: #dc1a5c;
     background: -moz-linear-gradient(left,  #dc1a5c 0%, #ea3a50 50%, #f37042 100%);
     background: -webkit-linear-gradient(left,  #dc1a5c 0%,#ea3a50 50%,#f37042 100%);
     background: linear-gradient(to right,  #dc1a5c 0%,#ea3a50 50%,#f37042 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dc1a5c', endColorstr='#f37042',GradientType=1 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dc1a5c', endColorstr='#f37042',GradientType=1 );*/
     /*background: #e2e3e7;*/
     width: 100%;
-    height: 3px;
+    height: 5px;
+    border-radius: 10px;
     position: absolute;
     left: 0px;
     top: 0px;
     margin: auto;
-    transform: translate(100%, 23px);
+    transform: translate(100%, 22px);
     transition: all .5s cubic-bezier(.77,.2,.325,1);
 }
 .main-nav.nav .nav-item .nav-link:hover:before,
 .main-nav.nav .nav-item .nav-link.active:before{
     /*left: 100%;*/
-    transform: translate(0%, 23px);
+    transform: translate(0%, 22px);
 }
 .main-nav.nav .nav-item .nav-link:after{
     content: '';
     /*background: var(--ars-color-basicprimary);*/
-    background: #dc1a5c;
+    /*background: #dc1a5c;
 	background: -moz-linear-gradient(left,  #dc1a5c 0%, #ea3a50 50%, #f37042 100%);
 	background: -webkit-linear-gradient(left,  #dc1a5c 0%,#ea3a50 50%,#f37042 100%);
 	background: linear-gradient(to right,  #dc1a5c 0%,#ea3a50 50%,#f37042 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dc1a5c', endColorstr='#f37042',GradientType=1 );
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dc1a5c', endColorstr='#f37042',GradientType=1 );*/
+
+	background: var(--ars-color-basicprimary);
+    background: -moz-linear-gradient(left, var(--ars-color-basicprimary) 0%, var(--ars-color-basicsecondary) 100%);
+    background: -webkit-linear-gradient(left, var(--ars-color-basicprimary) 0%, var(--ars-color-basicsecondary) 100%);
+    background: linear-gradient(to right, var(--ars-color-basicprimary) 0%, var(--ars-color-basicsecondary) 100%);
+    
     width: 100%;
     height: 34px;
     position: absolute;
